@@ -1,0 +1,9 @@
+# NodeJS
+/node_modules
+/dist
+
+# Config and Linter Files
+.editorconfig
+
+# Visual Studio Code
+.vscode

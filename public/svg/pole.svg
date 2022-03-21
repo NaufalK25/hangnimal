@@ -1,0 +1,17 @@
+<svg version="1.1" width="576" height="432" viewBox="0 0 640 480">
+    <desc>Created with Fabric.js 3.6.3</desc>
+    <defs>
+    </defs>
+    <g transform="matrix(1 0 0 1 247.36 223.49)">
+        <line style="stroke: rgb(0,0,0); stroke-width: 2; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" x1="-3" y1="-144" x2="3" y2="144" />
+    </g>
+    <g transform="matrix(1 0 0 1 295.35 81.58)">
+        <line style="stroke: rgb(0,0,0); stroke-width: 2; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" x1="-52.173913043478265" y1="0.8695652173913047" x2="52.173913043478265" y2="-0.8695652173913047" />
+    </g>
+    <g transform="matrix(1 0 0 1 265.35 101.14)">
+        <line style="stroke: rgb(0,0,0); stroke-width: 2; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" x1="22.173913043478265" y1="-20.434782608695656" x2="-22.173913043478265" y2="20.434782608695656" />
+    </g>
+    <g transform="matrix(1 0 0 1 251.44 367.66)">
+        <line style="stroke: rgb(0,0,0); stroke-width: 2; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" x1="-43.91304347826086" y1="0.8695652173913118" x2="43.91304347826086" y2="-0.8695652173913118" />
+    </g>
+</svg>
