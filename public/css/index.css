@@ -181,6 +181,11 @@ body {
     .key {
         font-size: 15pt;
     }
+
+    .result-image {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 @font-face {
