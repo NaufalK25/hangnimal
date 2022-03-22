@@ -30,7 +30,7 @@ Simple hangman game build with `TypeScript`.
     ```
 4. Run the application by directly copy paste your project dir path to browser
     ```
-    file://YOUR_DIR_PATH_NAME/YOUR_DIR_NAME/src/index.html
+    file://YOUR_DIR_PATH_NAME/YOUR_DIR_NAME/index.html
     ```
 
 ### Credits
