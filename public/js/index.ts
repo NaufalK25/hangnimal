@@ -80,7 +80,6 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
                         } else {
                             keyboardCharacter.classList.add('incorrect');
                             incorrect++;
-                            console.log(incorrect);
                             if (incorrect === 1) {
                                 pole.style.display = 'flex';
                                 pole.style.justifyContent = 'center';
@@ -177,7 +176,6 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
                         } else {
                             keyboardCharacter.classList.add('incorrect');
                             incorrect++;
-                            console.log(incorrect);
                             if (incorrect === 1) {
                                 pole.style.display = 'flex';
                                 pole.style.justifyContent = 'center';
