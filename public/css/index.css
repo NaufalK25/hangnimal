@@ -82,12 +82,40 @@ body {
     gap: 2rem;
 }
 
+.keyboard-top,
+.keyboard-middle,
+.keyboard-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .key {
     border: 2.5px solid transparent;
     border-radius: 0.5rem;
     padding: 0.5rem;
     font-size: 20pt;
     cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+    .keyboard {
+        padding: 1rem;
+    }
+
+    .key {
+        font-size: 15pt;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .keyboard {
+        padding: 0.5rem;
+    }
+
+    .key {
+        font-size: 12pt;
+    }
 }
 
 .key:hover,
@@ -137,7 +165,7 @@ body {
 }
 
 .result {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     text-align: center;
     font-size: 25pt;
     font-weight: bold;
