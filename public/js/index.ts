@@ -7,13 +7,13 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
     .then(response => response.json())
     .then(animal => {
         const realAnswer = animal.name.toUpperCase();
-        const dummyAnswer = realAnswer.replace(/[A-Z]/g, '?');
+        const dummyAnswer = realAnswer.replace(/[A-Z]/g, '_');
         const answerContainer = document.createElement('section');
         answerContainer.classList.add('answer-container');
         dummyAnswer.split('').forEach((character: string) => {
             const answerCharacter = document.createElement('span');
             answerCharacter.classList.add('answer');
-            answerCharacter.classList.add((character === '?') ? 'answer-dummy' : 'answer-special');
+            answerCharacter.classList.add((character === '_') ? 'answer-dummy' : 'answer-special');
             answerCharacter.textContent = character;
             answerContainer.appendChild(answerCharacter);
         });
@@ -33,7 +33,7 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
             }
         });
 
-        let correct = dummies.filter(dummy => dummy.match(/[^a-zA-Z?]/)).length;
+        let correct = dummies.filter(dummy => dummy.match(/\W/)).length;
         let incorrect = 0;
 
         // Hangman
@@ -131,7 +131,7 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
                                 middleLayer.classList.add('middle-layer');
                                 const resultContainer = document.createElement('section');
                                 resultContainer.classList.add('result-container');
-                                resultContainer.style.backgroundColor = 'red';
+                                resultContainer.style.backgroundColor = 'salmon';
                                 const result = document.createElement('p');
                                 result.classList.add('result');
                                 result.innerText = `You Lose! The correct answer is ${real.join('')}`;
@@ -241,7 +241,7 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
                                 middleLayer.classList.add('middle-layer');
                                 const resultContainer = document.createElement('section');
                                 resultContainer.classList.add('result-container');
-                                resultContainer.style.backgroundColor = 'red';
+                                resultContainer.style.backgroundColor = 'salmon';
                                 const result = document.createElement('p');
                                 result.classList.add('result');
                                 result.innerText = `You Lose! The correct answer is ${real.join('')}`;

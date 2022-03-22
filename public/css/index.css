@@ -39,7 +39,6 @@ body {
 .answer {
     font-family: "Courier New", Courier, monospace;
     font-size: 20pt;
-    border-bottom: 1px solid black;
     text-transform: uppercase;
     color: white;
 }
@@ -78,8 +77,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
-    gap: 2rem;
+    padding: 1rem;
+    gap: 1rem;
 }
 
 .keyboard-top,
@@ -142,9 +141,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
 .result {
+    width: 50%;
     font-family: "Courier New", Courier, monospace;
     text-align: center;
     font-size: 25pt;
@@ -152,9 +153,8 @@ body {
 }
 
 .result-image {
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
+    width: 50%;
+    height: auto;
 }
 
 .flash-message {
@@ -175,7 +175,7 @@ body {
     }
 
     .keyboard {
-        padding: 1rem;
+        padding: 0.5rem;
     }
 
     .key {
