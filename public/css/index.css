@@ -98,26 +98,6 @@ body {
     cursor: pointer;
 }
 
-@media screen and (max-width: 640px) {
-    .keyboard {
-        padding: 1rem;
-    }
-
-    .key {
-        font-size: 15pt;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .keyboard {
-        padding: 0.5rem;
-    }
-
-    .key {
-        font-size: 12pt;
-    }
-}
-
 .key:hover,
 .key-pressed {
     background-color: black;
@@ -187,6 +167,20 @@ body {
     padding: 0.5rem;
     border-radius: 0.5rem;
     cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+    .answer {
+        font-size: 15pt;
+    }
+
+    .keyboard {
+        padding: 1rem;
+    }
+
+    .key {
+        font-size: 15pt;
+    }
 }
 
 @font-face {
