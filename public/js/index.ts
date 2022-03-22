@@ -62,11 +62,18 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
                                             if (correct === real.length) {
                                                 const middleLayer = document.createElement('section');
                                                 middleLayer.classList.add('middle-layer');
+                                                const resultContainer = document.createElement('section');
+                                                resultContainer.classList.add('result-container');
+                                                resultContainer.style.backgroundColor = 'lime';
                                                 const result = document.createElement('p');
                                                 result.classList.add('result');
-                                                result.style.backgroundColor = 'lime';
-                                                result.textContent = 'You Win!';
-                                                middleLayer.appendChild(result);
+                                                result.innerText = 'You Win!';
+                                                const resultImage = document.createElement('img');
+                                                resultImage.classList.add('result-image');
+                                                resultImage.src = animal.image_link;
+                                                resultContainer.appendChild(result);
+                                                resultContainer.appendChild(resultImage);
+                                                middleLayer.appendChild(resultContainer);
                                                 document.body.appendChild(middleLayer);
 
                                                 setTimeout(() => {
@@ -122,11 +129,18 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
 
                                 const middleLayer = document.createElement('section');
                                 middleLayer.classList.add('middle-layer');
+                                const resultContainer = document.createElement('section');
+                                resultContainer.classList.add('result-container');
+                                resultContainer.style.backgroundColor = 'red';
                                 const result = document.createElement('p');
                                 result.classList.add('result');
-                                result.style.backgroundColor = 'red';
                                 result.innerText = `You Lose! The correct answer is ${real.join('')}`;
-                                middleLayer.appendChild(result);
+                                const resultImage = document.createElement('img');
+                                resultImage.classList.add('result-image');
+                                resultImage.src = animal.image_link;
+                                resultContainer.appendChild(result);
+                                resultContainer.appendChild(resultImage);
+                                middleLayer.appendChild(resultContainer);
                                 document.body.appendChild(middleLayer);
 
                                 setTimeout(() => {
@@ -158,11 +172,18 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
                                             if (correct === real.length) {
                                                 const middleLayer = document.createElement('section');
                                                 middleLayer.classList.add('middle-layer');
+                                                const resultContainer = document.createElement('section');
+                                                resultContainer.classList.add('result-container');
+                                                resultContainer.style.backgroundColor = 'lime';
                                                 const result = document.createElement('p');
                                                 result.classList.add('result');
-                                                result.style.backgroundColor = 'lime';
-                                                result.textContent = 'You Win!';
-                                                middleLayer.appendChild(result);
+                                                result.innerText = 'You Win!';
+                                                const resultImage = document.createElement('img');
+                                                resultImage.classList.add('result-image');
+                                                resultImage.src = animal.image_link;
+                                                resultContainer.appendChild(result);
+                                                resultContainer.appendChild(resultImage);
+                                                middleLayer.appendChild(resultContainer);
                                                 document.body.appendChild(middleLayer);
 
                                                 setTimeout(() => {
@@ -218,11 +239,18 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
 
                                 const middleLayer = document.createElement('section');
                                 middleLayer.classList.add('middle-layer');
+                                const resultContainer = document.createElement('section');
+                                resultContainer.classList.add('result-container');
+                                resultContainer.style.backgroundColor = 'red';
                                 const result = document.createElement('p');
                                 result.classList.add('result');
-                                result.style.backgroundColor = 'red';
                                 result.innerText = `You Lose! The correct answer is ${real.join('')}`;
-                                middleLayer.appendChild(result);
+                                const resultImage = document.createElement('img');
+                                resultImage.classList.add('result-image');
+                                resultImage.src = animal.image_link;
+                                resultContainer.appendChild(result);
+                                resultContainer.appendChild(resultImage);
+                                middleLayer.appendChild(resultContainer);
                                 document.body.appendChild(middleLayer);
 
                                 setTimeout(() => {

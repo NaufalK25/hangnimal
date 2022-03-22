@@ -123,18 +123,30 @@ body {
     z-index: 1;
 }
 
-.result {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
+.result-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 30pt;
-    font-weight: bold;
     opacity: 1;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 25pt;
+    font-weight: bold;
+}
+
+.result-image {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
 }
 
 .flash-message {
