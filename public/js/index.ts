@@ -274,6 +274,12 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
                 keyboardCharacter.classList.remove('key-pressed');
             }
         });
+    })
+    .catch(err => {
+        const flashMessage = <HTMLElement>document.querySelector('section.flash');
+        flashMessage.classList.add('flash-message');
+        flashMessage.style.backgroundColor = 'salmon';
+        flashMessage.textContent = 'Failed to fetch data';
     });
 
 // Flash Message
