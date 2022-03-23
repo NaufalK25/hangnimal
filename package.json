@@ -7,9 +7,6 @@
         "build-ts": "tsc",
         "watch-ts": "tsc -w",
         "build": "npm run build-ts",
-        "start": "npm run serve",
-        "serve": "node dist/app.js",
-        "dev": "tsnd --respawn --pretty --transpile-only app.ts",
         "lint": "eslint . --ext .ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
