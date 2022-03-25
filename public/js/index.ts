@@ -1,23 +1,40 @@
 const DURATION = 5000;
 
+interface Animal {
+    name: string;
+    latin_name: string;
+    animal_type: string;
+    active_time: string;
+    length_min: string;
+    length_max: string;
+    weight_min: string;
+    weight_max: string;
+    lifespan: string;
+    habitat: string;
+    diet: string;
+    geo_range: string;
+    image_link: string;
+    id: number;
+}
+
 // Get Random Animal
 const question = <HTMLElement>document.querySelector('section.question');
 
 fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
-    .then(response => response.json())
+    .then((response): Promise<Animal> => response.json())
     .then(animal => {
         const realAnswer = animal.name.toUpperCase();
         const dummyAnswer = realAnswer.replace(/[A-Z]/g, '_');
         const answerContainer = document.createElement('section');
         answerContainer.classList.add('answer-container');
-        dummyAnswer.split('').forEach((character: string) => {
+        dummyAnswer.split('').forEach(character => {
             const answerCharacter = document.createElement('span');
             answerCharacter.classList.add('answer');
             answerCharacter.classList.add((character === '_') ? 'answer-dummy' : 'answer-special');
             answerCharacter.textContent = character;
             answerContainer.appendChild(answerCharacter);
         });
-        question.append(answerContainer);
+        question.appendChild(answerContainer);
 
 
         // Keyboard events
@@ -275,7 +292,7 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
             }
         });
     })
-    .catch(err => {
+    .catch((_err: Error) => {
         const flashMessage = <HTMLElement>document.querySelector('section.flash');
         flashMessage.classList.add('flash-message');
         flashMessage.style.backgroundColor = 'salmon';
