@@ -1,4 +1,4 @@
-const DURATION = 5000;
+const AFTER_GAME_DELAY = 5000;
 
 interface Animal {
     name: string;
@@ -71,7 +71,7 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
                         if (real.includes(character)) {
                             keyboardCharacter.classList.add('correct');
                             answers.forEach((answer, answerIndex) => {
-                                real.forEach((realAnswer: string, realAnswerIndex: number) => {
+                                real.forEach((realAnswer, realAnswerIndex) => {
                                     if (realAnswer === character) {
                                         if (answerIndex === realAnswerIndex) {
                                             answer.textContent = character;
@@ -95,7 +95,7 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
 
                                                 setTimeout(() => {
                                                     window.location.reload();
-                                                }, DURATION);
+                                                }, AFTER_GAME_DELAY);
                                             }
                                         }
                                     }
@@ -162,7 +162,7 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
 
                                 setTimeout(() => {
                                     window.location.reload();
-                                }, DURATION);
+                                }, AFTER_GAME_DELAY);
                             }
                         }
                     }
@@ -170,7 +170,7 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
             });
         });
 
-        window.addEventListener('keydown', (event) => {
+        window.addEventListener('keydown', event => {
             const key = event.key.toUpperCase();
             const keyboardCharacter = <HTMLSpanElement>document.querySelector(`span.key[data-key="${key}"]`);
             if (keyboardCharacter) {
@@ -181,7 +181,7 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
                         if (real.includes(character)) {
                             keyboardCharacter.classList.add('correct');
                             answers.forEach((answer, answerIndex) => {
-                                real.forEach((realAnswer: string, realAnswerIndex: number) => {
+                                real.forEach((realAnswer, realAnswerIndex) => {
                                     if (realAnswer === character) {
                                         if (answerIndex === realAnswerIndex) {
                                             answer.textContent = character;
@@ -205,7 +205,7 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
 
                                                 setTimeout(() => {
                                                     window.location.reload();
-                                                }, DURATION);
+                                                }, AFTER_GAME_DELAY);
                                             }
                                         }
                                     }
@@ -272,7 +272,7 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
 
                                 setTimeout(() => {
                                     window.location.reload();
-                                }, DURATION);
+                                }, AFTER_GAME_DELAY);
                             }
                         }
                     }
@@ -284,7 +284,7 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
             }
         });
 
-        window.addEventListener('keyup', (event) => {
+        window.addEventListener('keyup', event => {
             const key = event.key.toUpperCase();
             const keyboardCharacter = <HTMLSpanElement>document.querySelector(`span.key[data-key="${key}"]`);
             if (keyboardCharacter) {
@@ -292,7 +292,7 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
             }
         });
     })
-    .catch((_err: Error) => {
+    .catch((err: Error) => {
         const flashMessage = <HTMLElement>document.querySelector('section.flash');
         flashMessage.classList.add('flash-message');
         flashMessage.style.backgroundColor = 'salmon';
@@ -310,4 +310,4 @@ flashMessage.addEventListener('click', () => {
 setTimeout(() => {
     flashMessage.classList.remove('flash-message');
     flashMessage.textContent = '';
-}, DURATION);
+}, AFTER_GAME_DELAY);
