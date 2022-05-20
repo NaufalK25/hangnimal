@@ -19,10 +19,10 @@ interface Animal {
 
 // Get Random Animal
 const question = <HTMLElement>document.querySelector('section.question');
-
-fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
-    .then((response): Promise<Animal> => response.json())
-    .then(animal => {
+const start = async () => {
+    try {
+        const response = await fetch('https://zoo-animal-api.herokuapp.com/animals/rand');
+        const animal: Animal = await response.json();
         const realAnswer = animal.name.toUpperCase();
         const dummyAnswer = realAnswer.replace(/[A-Z]/g, '_');
         const answerContainer = document.createElement('section');
@@ -35,7 +35,6 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
             answerContainer.appendChild(answerCharacter);
         });
         question.appendChild(answerContainer);
-
 
         // Keyboard events
         const keyboardCharacters: NodeListOf<HTMLSpanElement> = document.querySelectorAll('span.key');
@@ -278,6 +277,7 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
                     }
                 }
             } else {
+                // When non-alphabet key pressed
                 const flashMessage = <HTMLElement>document.querySelector('section.flash');
                 flashMessage.classList.add('flash-message');
                 flashMessage.textContent = `Unknown key: ${key}`;
@@ -291,13 +291,16 @@ fetch('https://zoo-animal-api.herokuapp.com/animals/rand')
                 keyboardCharacter.classList.remove('key-pressed');
             }
         });
-    })
-    .catch((err: Error) => {
+    } catch (error) {
         const flashMessage = <HTMLElement>document.querySelector('section.flash');
         flashMessage.classList.add('flash-message');
         flashMessage.style.backgroundColor = 'salmon';
         flashMessage.textContent = 'Failed to fetch data';
-    });
+    }
+}
+
+// Start the game
+start();
 
 // Flash Message
 const flashMessage = <HTMLElement>document.querySelector('section.flash');
