@@ -1,9 +1,14 @@
-# NodeJS
-/node_modules
-/dist
+# Node JS
+package-lock.json
+node_modules/
 
-# Config and Linter Files
-.editorconfig
+# Build
+dist/
 
-# Visual Studio Code
-.vscode
+# Environtment Variables
+.env
+.env.*
+!.env.example
+
+# Code Editor
+.vscode/

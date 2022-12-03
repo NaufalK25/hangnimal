@@ -1,23 +1,9 @@
+import '../public/css/index.css';
+import clearFlashMessage from './clearFlashMessage';
+import Animal from './Animal';
+
 const AFTER_GAME_DELAY = 5000;
 
-interface Animal {
-    name: string;
-    latin_name: string;
-    animal_type: string;
-    active_time: string;
-    length_min: string;
-    length_max: string;
-    weight_min: string;
-    weight_max: string;
-    lifespan: string;
-    habitat: string;
-    diet: string;
-    geo_range: string;
-    image_link: string;
-    id: number;
-}
-
-// Get Random Animal
 const question = <HTMLElement>document.querySelector('section.question');
 const start = async () => {
     try {
@@ -30,13 +16,12 @@ const start = async () => {
         dummyAnswer.split('').forEach(character => {
             const answerCharacter = document.createElement('span');
             answerCharacter.classList.add('answer');
-            answerCharacter.classList.add((character === '_') ? 'answer-dummy' : 'answer-special');
+            answerCharacter.classList.add(character === '_' ? 'answer-dummy' : 'answer-special');
             answerCharacter.textContent = character;
             answerContainer.appendChild(answerCharacter);
         });
         question.appendChild(answerContainer);
 
-        // Keyboard events
         const keyboardCharacters: NodeListOf<HTMLSpanElement> = document.querySelectorAll('span.key');
         const answers: NodeListOf<HTMLSpanElement> = document.querySelectorAll('span.answer');
         const dummies: string[] = [];
@@ -52,7 +37,6 @@ const start = async () => {
         let correct = dummies.filter(dummy => dummy.match(/\W/)).length;
         let incorrect = 0;
 
-        // Hangman
         const pole = <HTMLDivElement>document.querySelector('div.pole');
         const rope = <HTMLDivElement>document.querySelector('div.rope');
         const head = <HTMLDivElement>document.querySelector('div.head');
@@ -277,7 +261,6 @@ const start = async () => {
                     }
                 }
             } else {
-                // When non-alphabet key pressed
                 const flashMessage = <HTMLElement>document.querySelector('section.flash');
                 flashMessage.classList.add('flash-message');
                 flashMessage.textContent = `Unknown key: ${key}`;
@@ -297,20 +280,8 @@ const start = async () => {
         flashMessage.style.backgroundColor = 'salmon';
         flashMessage.textContent = 'Failed to fetch data';
     }
-}
+};
 
-// Start the game
 start();
 
-// Flash Message
-const flashMessage = <HTMLElement>document.querySelector('section.flash');
-
-flashMessage.addEventListener('click', () => {
-    flashMessage.classList.remove('flash-message');
-    flashMessage.textContent = '';
-});
-
-setTimeout(() => {
-    flashMessage.classList.remove('flash-message');
-    flashMessage.textContent = '';
-}, AFTER_GAME_DELAY);
+clearFlashMessage(AFTER_GAME_DELAY);

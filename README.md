@@ -1,4 +1,4 @@
-# Hangman
+# Hangnimal
 
 Simple hangman game build with `TypeScript`.
 
