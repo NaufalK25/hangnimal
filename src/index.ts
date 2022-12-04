@@ -1,6 +1,6 @@
 import '../public/css/index.css';
 import clearFlashMessage from './clearFlashMessage';
-import Animal from './Animal';
+import { ZooAnimalApi as Animal } from './Animal';
 
 const AFTER_GAME_DELAY = 5000;
 

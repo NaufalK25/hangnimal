@@ -1,4 +1,8 @@
-interface Animal {
+/**
+ * @link https://zoo-animal-api.herokuapp.com/animals/rand
+ * @deprecated
+ */
+export interface ZooAnimalApi {
     name: string;
     latin_name: string;
     animal_type: string;
@@ -14,5 +18,3 @@ interface Animal {
     image_link: string;
     id: number;
 }
-
-export default Animal;
